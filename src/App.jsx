@@ -1,14 +1,22 @@
-import { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Card from "./Components/Card/Card";
+import React from "react";
+import { Container } from "./Components/styled/Container.styled";
+import { Navbar } from "./Components/styled/Navbar.styled";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <Card />
+      <Navbar>
+        <header>
+          <h1>Where in the world?</h1>
+        </header>
+        <div>
+          <img src="" alt="" />
+          <p>Dark Mode</p>
+        </div>
+      </Navbar>
+      <main>
+        <Container />
+      </main>
     </div>
   );
 }

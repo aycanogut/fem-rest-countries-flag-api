@@ -1,21 +1,22 @@
 import { ThemeProvider } from "styled-components";
 
-export const lightTheme = {};
-export const darkTheme = {};
+export const lightTheme = {
+  background: "#FAFAFA",
+  text: "#111517",
+  elements: "#fff",
+  input: "#858585",
+};
+export const darkTheme = {
+  background: "#202C37",
+  text: "#fff",
+  elements: "#2B3945",
+};
 
 export const theme = {
   breakpoints: {
-    sm: `${320}px`,
+    sm: `320px`,
     md: "768px",
     lg: "1200px",
-  },
-  colors: {
-    darkBlue: "hsl(209, 23%, 22%)",
-    veryDarkBlueBg: "hsl(207, 26%, 17%)",
-    veryDarkBlueText: "hsl(207, 26%, 17%)",
-    darkGray: "hsl(0, 0%, 52%)",
-    veryLightGray: "hsl(0, 0%, 98%)",
-    white: "hsl(0, 0%, 100%)",
   },
   fontWeight: {
     thin: 300,

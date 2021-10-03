@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./Components/styled/globalStyles";
-import { lightTheme, darkTheme, helpers } from "./Components/styled/Theme";
+import { GlobalStyles } from "./Components/globalStyles";
+import { useDarkMode } from "./Components/useDarkMode.js";
+import { lightTheme, darkTheme, helpers } from "./Components/Theme";
 import { Container } from "./Components/styled/Container.styled";
-import { Navbar } from "./Components/styled/Navbar.styled";
+import { Header } from "./Components/styled/Header.styled";
+import Toggler from "./Components/styled/Toggler";
 
-function App() {
-  const [theme, setTheme] = useState("light");
+const App = () => {
+  const [theme, setTheme] = useDarkMode();
 
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <ThemeProvider theme={themeMode}>
         <React.Fragment>
           <GlobalStyles />
-          <Navbar>
-            <header>
-              <h1>Where in the world?</h1>
-            </header>
-            <div>
-              <img src="" alt="" />
-              <button onClick={themeToggler}>Dark Mode</button>
-            </div>
-          </Navbar>
-          <main>
-            <Container />
-          </main>
+          <Header>
+            <Toggler />
+            {props.children}
+          </Header>
+          <Container />
         </React.Fragment>
       </ThemeProvider>
     </div>
   );
-}
+};
 
 export default App;

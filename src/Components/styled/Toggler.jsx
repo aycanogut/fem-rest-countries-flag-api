@@ -18,7 +18,7 @@ export const Toggler = ({ theme, toggleTheme }) => {
   return <Button onClick={toggleTheme}>Switch Theme</Button>;
 };
 
-// Toggler.propTypes = {
-//   theme: string.isRequired,
-//   toggleTheme: func.isRequired,
-// };
+Toggler.propTypes = {
+  theme: string.isRequired,
+  toggleTheme: func.isRequired,
+};

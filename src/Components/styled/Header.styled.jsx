@@ -8,10 +8,6 @@ const StyledHeader = styled.header`
   height: 100px;
 `;
 
-export const Header = ({ ...children }) => {
-  return (
-    <StyledHeader>
-      <h1>Where in the world?</h1>
-    </StyledHeader>
-  );
+export const Header = ({ children }) => {
+  return <StyledHeader>{children}</StyledHeader>;
 };

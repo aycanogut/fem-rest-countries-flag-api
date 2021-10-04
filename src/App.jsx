@@ -5,7 +5,7 @@ import { useDarkMode } from "./Components/useDarkMode.js";
 import { lightTheme, darkTheme, helpers } from "./Components/Theme";
 import { Container } from "./Components/styled/Container.styled";
 import { Header } from "./Components/styled/Header.styled";
-import { Toggler } from "./Components/styled/Toggler";
+import { Toggler } from "./Components/Toggler";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -18,8 +18,9 @@ const App = () => {
       <ThemeProvider theme={themeMode}>
         <React.Fragment>
           <GlobalStyles />
-          <Header />
-          <Toggler theme={theme} toggleTheme={themeToggler} />
+          <Header>
+            <Toggler theme={theme} toggleTheme={themeToggler} />
+          </Header>
           <Container />
         </React.Fragment>
       </ThemeProvider>

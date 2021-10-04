@@ -32,11 +32,23 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 // global styles
-  body {
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: 'Nunito Sans', sans-serif;
     transition: all 0.25s linear;
-  }
+}
 
+h1 {
+    font-size: 1.7rem;
+}
 `;

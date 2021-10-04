@@ -5,7 +5,7 @@ import { useDarkMode } from "./Components/useDarkMode.js";
 import { lightTheme, darkTheme, helpers } from "./Components/Theme";
 import { Container } from "./Components/styled/Container.styled";
 import { Header } from "./Components/styled/Header.styled";
-import { Toggler } from "./Components/Toggler";
+import { Toggler } from "./Components/styled/Toggler.styled";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();

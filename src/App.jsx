@@ -19,6 +19,7 @@ const App = () => {
         <React.Fragment>
           <GlobalStyles />
           <Header>
+            <h1>Where in the world?</h1>
             <Toggler theme={theme} toggleTheme={themeToggler} />
           </Header>
           <Container />

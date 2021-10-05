@@ -1,6 +1,7 @@
 import React from "react";
-import { func, string } from "prop-types";
 import styled from "styled-components";
+import { func, string } from "prop-types";
+import helpers from "../helpers.js";
 import IconDark from "../../assets/icons/moon-half-dark.svg";
 import IconLight from "../../assets/icons/moon-half-light.svg";
 

@@ -11,7 +11,6 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   border: none;
-  padding: 0;
   font-size: 1.6rem;
   font-weight: 600;
 `;
@@ -19,6 +18,12 @@ const Button = styled.button`
 const Icon = styled.img`
   width: 16px;
   height: 16px;
+  margin: 0rem 0.2rem 0 0;
+  vertical-align: sub;
+
+  @media only screen and ${helpers.device.sm} {
+    margin: 0rem 0.9rem 0 0;
+  } ;
 `;
 
 const Wrapper = styled.div`

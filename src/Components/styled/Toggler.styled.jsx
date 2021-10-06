@@ -13,11 +13,19 @@ const Button = styled.button`
   border: none;
   font-size: 1.6rem;
   font-weight: 600;
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 2.35rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    font-size: 1.6rem;
+  } ;
 `;
 
 const Icon = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 15px;
   margin: 0rem 0.2rem 0 0;
   vertical-align: sub;
 
@@ -26,10 +34,14 @@ const Icon = styled.img`
   }
 
   @media only screen and ${helpers.device.md} {
-    margin: 0 1.25rem 0 0;
+    width: 27px;
+    height: 25px;
+    margin: 0 1.35rem 0 0;
   }
 
   @media only screen and ${helpers.device.lg} {
+    width: 17px;
+    height: 15px;
     margin: 0 0.625rem 0 0;
   }
 `;

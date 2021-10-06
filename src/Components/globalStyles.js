@@ -51,5 +51,14 @@ body {
 
 h1 {
     font-size: 1.7rem;
+    font-weight: ${helpers.fontWeight.extraBold}
+
+    @media only screen and ${helpers.device.md} {
+        font-size: 2.75rem;
+    } ;
+
+    @media only screen and ${helpers.device.md} {
+        font-size: 2.35rem;
+    } ;
 }
 `;

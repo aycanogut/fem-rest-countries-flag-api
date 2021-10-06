@@ -22,6 +22,16 @@ const Icon = styled.img`
   vertical-align: sub;
 
   @media only screen and ${helpers.device.sm} {
+    margin: 0 0.75rem 0 0;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    margin: 0 1.25rem 0 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    margin: 0 0.625rem 0 0;
+  }
 `;
 
 const Wrapper = styled.div`

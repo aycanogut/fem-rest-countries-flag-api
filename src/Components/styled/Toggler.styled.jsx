@@ -22,8 +22,6 @@ const Icon = styled.img`
   vertical-align: sub;
 
   @media only screen and ${helpers.device.sm} {
-    margin: 0rem 0.9rem 0 0;
-  } ;
 `;
 
 const Wrapper = styled.div`
@@ -44,7 +42,7 @@ export const Toggler = ({ theme, toggleTheme }) => {
           src={IconLight}
           alt="light mode toggler"
         />
-        <Button>{theme === "light" ? "Dark Mode" : "Light Mode"}</Button>
+        <Button>Dark Mode</Button>
       </Wrapper>
     </React.Fragment>
   );

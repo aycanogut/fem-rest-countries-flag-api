@@ -38,10 +38,6 @@ html {
     font-size: 62.5%;
 }
 
-img {
-    max-width: 100%;
-}
-
 body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
@@ -61,4 +57,14 @@ h1 {
         font-size: 2.35rem;
     } ;
 }
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
 `;

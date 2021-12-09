@@ -8,10 +8,12 @@ import Card from "./Card.styled";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 296px;
+  row-gap: 3rem;
+  max-width: 280px;
   margin: 0 auto;
-
+  
   @media only screen and ${helpers.device.sm} {
+    row-gap: 5rem;
     max-width: 328px;
   }
 

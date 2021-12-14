@@ -36,10 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 
 html {
     font-size: 62.5%;
-}
-
-img {
-    max-width: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -61,4 +58,14 @@ h1 {
         font-size: 2.35rem;
     } ;
 }
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
 `;

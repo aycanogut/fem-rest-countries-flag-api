@@ -3,7 +3,8 @@ const size = {
   xs: "320px",
   sm: "465px",
   md: "750px",
-  lg: "1200px",
+  lg: "1024px",
+  xl: "1440px",
 };
 
 const device = {
@@ -11,6 +12,7 @@ const device = {
   sm: `(min-width: ${size.sm})`,
   md: `(min-width: ${size.md})`,
   lg: `(min-width: ${size.lg})`,
+  xl: `(min-width: ${size.xl})`,
 };
 
 // typography

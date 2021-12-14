@@ -43,7 +43,7 @@ body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: 'Nunito Sans', sans-serif;
-    transition: 0;
+    transition: none;
 }
 
 h1 {

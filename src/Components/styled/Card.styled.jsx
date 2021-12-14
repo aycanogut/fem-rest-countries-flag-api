@@ -2,12 +2,17 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 import useCountries from "../../hooks/useCountries";
+import { theme } from "../Theme";
 import helpers from "../helpers";
 
 const StyledWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  border: 1px solid #e6e6e6;
+  background-color: ${({ theme }) => theme.elements};
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
 `;
 
 const StyledImgWrapper = styled.div`
@@ -19,6 +24,8 @@ const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
 `;
 
 const StyledCardBottom = styled.div`

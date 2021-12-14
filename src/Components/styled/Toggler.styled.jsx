@@ -52,7 +52,7 @@ const Wrapper = styled.div`
 
 export const Toggler = ({ theme, toggleTheme }) => {
   return (
-    <React.Fragment>
+    <>
       <Wrapper onClick={toggleTheme}>
         <Icon
           style={{ display: `${theme == "light" ? "none" : "inline"}` }}
@@ -66,7 +66,7 @@ export const Toggler = ({ theme, toggleTheme }) => {
         />
         <Button>Dark Mode</Button>
       </Wrapper>
-    </React.Fragment>
+    </>
   );
 };
 

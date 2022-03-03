@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import useCountries from "../../hooks/useCountries";
 import helpers from "../helpers";
-import uid from "../../helpers/uid";
+import uid from "../../utils/uid";
 
 import Card from "./Card.styled";
 

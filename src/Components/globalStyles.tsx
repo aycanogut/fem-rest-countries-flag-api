@@ -1,5 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-import { theme } from "./Theme";
 import helpers from "./helpers";
 
 export const GlobalStyles = createGlobalStyle`

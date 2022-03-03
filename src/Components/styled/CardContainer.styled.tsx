@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 import useCountries from "../../hooks/useCountries";
-import { theme } from "../Theme";
 import helpers from "../helpers";
 import uid from "../../helpers/uid";
 
@@ -41,7 +40,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export const CardContainer = ({}) => {
+export const CardContainer = () => {
   const { countries, fetchData } = useCountries();
 
   useEffect(() => {

@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 
 import useCountries from "../../hooks/useCountries";
-import { theme } from "../Theme";
 import helpers from "../helpers";
 
 const StyledWrapper = styled.article`

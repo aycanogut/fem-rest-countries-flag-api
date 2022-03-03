@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Toggler } from "./Toggler.styled";
 import helpers from "../helpers";
 
 const StyledHeader = styled.header`

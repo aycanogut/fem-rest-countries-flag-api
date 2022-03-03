@@ -1,3 +1,4 @@
+import { createGlobalStyle } from "styled-components";
 import helpers from "./helpers";
 
 export const GlobalStyles = createGlobalStyle`
@@ -57,7 +58,7 @@ h1 {
     } ;
 }
 
-ul{
+ul {
     list-style: none;
     padding: 0;
 }

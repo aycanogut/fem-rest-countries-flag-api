@@ -52,21 +52,19 @@ const Wrapper = styled.div`
 
 export const Toggler = ({ theme, toggleTheme }) => {
   return (
-    <>
-      <Wrapper onClick={toggleTheme}>
-        <Icon
-          style={{ display: `${theme == "light" ? "none" : "inline"}` }}
-          src={IconDark}
-          alt="dark mode toggler"
-        />
-        <Icon
-          style={{ display: `${theme == "light" ? "inline" : "none"}` }}
-          src={IconLight}
-          alt="light mode toggler"
-        />
-        <Button>Dark Mode</Button>
-      </Wrapper>
-    </>
+    <Wrapper onClick={toggleTheme}>
+      <Icon
+        style={{ display: `${theme == "light" ? "none" : "inline"}` }}
+        src={IconDark}
+        alt="dark mode toggler"
+      />
+      <Icon
+        style={{ display: `${theme == "light" ? "inline" : "none"}` }}
+        src={IconLight}
+        alt="light mode toggler"
+      />
+      <Button>Dark Mode</Button>
+    </Wrapper>
   );
 };
 

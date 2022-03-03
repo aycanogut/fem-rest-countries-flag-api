@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Components/globalStyles";
-import { useDarkMode } from "./Components/useDarkMode.js";
+import { useDarkMode } from "./Components/useDarkMode.tsx";
 import { lightTheme, darkTheme } from "./Components/Theme";
 import { CardContainer } from "./Components/styled/CardContainer.styled";
 import { Header } from "./Components/styled/Header.styled";

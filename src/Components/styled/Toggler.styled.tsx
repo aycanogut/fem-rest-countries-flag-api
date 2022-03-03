@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { func, string } from "prop-types";
 import helpers from "../helpers.js";
 import IconDark from "../../assets/icons/moon-half-dark.svg";
 import IconLight from "../../assets/icons/moon-half-light.svg";
@@ -66,9 +65,4 @@ export const Toggler = ({ theme, toggleTheme }) => {
       <Button>Dark Mode</Button>
     </Wrapper>
   );
-};
-
-Toggler.propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired,
 };

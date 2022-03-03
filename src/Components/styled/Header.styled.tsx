@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Toggler } from "./Toggler.styled";
 import helpers from "../helpers";
 
 const StyledHeader = styled.header`
@@ -27,6 +26,10 @@ const StyledHeader = styled.header`
   } ;
 `;
 
-export const Header = ({ children }) => {
+interface IHeaderProps {
+  children: React.ReactNode;
+}
+
+export const Header = ({ children }: IHeaderProps) => {
   return <StyledHeader>{children}</StyledHeader>;
 };

@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 
 import useCountries from "../../hooks/useCountries";
-import { theme } from "../Theme";
 import helpers from "../helpers";
 
 const StyledWrapper = styled.article`
@@ -75,6 +73,20 @@ const StyledSpan = styled.span`
   font-weight: ${helpers.fontWeight.semiBold};
 `;
 
+interface ICardProps {
+  id: number;
+  name: string;
+  flag: string;
+  population: number;
+  region: string;
+  subRegion: string;
+  capital: string[];
+  domain: string;
+  currency: string[];
+  language: string;
+  borders: string[];
+}
+
 const Card = ({
   id,
   name,
@@ -87,7 +99,7 @@ const Card = ({
   currency,
   language,
   borders,
-}) => {
+}: ICardProps) => {
   const { countries, fetchData } = useCountries();
 
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { func, string } from "prop-types";
-import helpers from "../helpers.js";
+import helpers from "../helpers.tsx";
 import IconDark from "../../assets/icons/moon-half-dark.svg";
 import IconLight from "../../assets/icons/moon-half-light.svg";
 
@@ -50,27 +49,25 @@ const Wrapper = styled.div`
   cursor: pointer;
 `;
 
-export const Toggler = ({ theme, toggleTheme }) => {
-  return (
-    <>
-      <Wrapper onClick={toggleTheme}>
-        <Icon
-          style={{ display: `${theme == "light" ? "none" : "inline"}` }}
-          src={IconDark}
-          alt="dark mode toggler"
-        />
-        <Icon
-          style={{ display: `${theme == "light" ? "inline" : "none"}` }}
-          src={IconLight}
-          alt="light mode toggler"
-        />
-        <Button>Dark Mode</Button>
-      </Wrapper>
-    </>
-  );
-};
+interface ITogglerProps {
+  theme: string;
+  toggleTheme: () => void;
+}
 
-Toggler.propTypes = {
-  theme: string.isRequired,
-  toggleTheme: func.isRequired,
+export const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
+  return (
+    <Wrapper onClick={toggleTheme}>
+      <Icon
+        style={{ display: `${theme == "light" ? "none" : "inline"}` }}
+        src={IconDark}
+        alt="dark mode toggler"
+      />
+      <Icon
+        style={{ display: `${theme == "light" ? "inline" : "none"}` }}
+        src={IconLight}
+        alt="light mode toggler"
+      />
+      <Button>Dark Mode</Button>
+    </Wrapper>
+  );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import helpers from "../helpers.js";
+import helpers from "../helpers.tsx";
 import IconDark from "../../assets/icons/moon-half-dark.svg";
 import IconLight from "../../assets/icons/moon-half-light.svg";
 

@@ -49,7 +49,12 @@ const Wrapper = styled.div`
   cursor: pointer;
 `;
 
-export const Toggler = ({ theme, toggleTheme }) => {
+interface ITogglerProps {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+export const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
   return (
     <Wrapper onClick={toggleTheme}>
       <Icon

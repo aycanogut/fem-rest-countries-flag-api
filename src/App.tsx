@@ -10,10 +10,6 @@ import { Toggler } from "./Components/styled/Toggler.styled";
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
-  console.log(theme);
-  // console.log(themeToggler);
-  // console.log(mountedComponent);
-
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   if (!mountedComponent) return <div />;

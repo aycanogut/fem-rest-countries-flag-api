@@ -1,33 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./Components/globalStyles";
-import { useDarkMode } from "./Components/useDarkMode.tsx";
-import { lightTheme, darkTheme } from "./Components/Theme";
-import { CardContainer } from "./Components/styled/CardContainer.styled";
-import { Header } from "./Components/styled/Header.styled";
-import { Toggler } from "./Components/styled/Toggler.styled";
+import { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-const App = () => {
-  const [theme, themeToggler, mountedComponent] = useDarkMode();
-
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
-
-  if (!mountedComponent) return <div />;
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <ThemeProvider theme={themeMode}>
-        <React.Fragment>
-          <GlobalStyles />
-          <Header>
-            <h1>Where in the world?</h1>
-            <Toggler theme={theme} toggleTheme={themeToggler} />
-          </Header>
-          <CardContainer />
-        </React.Fragment>
-      </ThemeProvider>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Hello Vite + React!</p>
+        <p>
+          <button type="button" onClick={() => setCount((count) => count + 1)}>
+            count is: {count}
+          </button>
+        </p>
+        <p>
+          Edit <code>App.tsx</code> and save to test HMR updates.
+        </p>
+        <p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          {' | '}
+          <a
+            className="App-link"
+            href="https://vitejs.dev/guide/features.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vite Docs
+          </a>
+        </p>
+      </header>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

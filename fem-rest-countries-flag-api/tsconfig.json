@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es2016",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

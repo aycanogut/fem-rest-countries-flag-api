@@ -1,18 +1,18 @@
-// import { useState } from "react";
+import { useState } from 'react'
 
-// const baseUrl = `https://restcountries.com/v3.1/all`;
+const baseUrl = `https://restcountries.com/v3.1/all`
 
-// const useCountries = () => {
-//   const [countries, setCountries] = useState([]);
+const useCountries = () => {
+  const [countries, setCountries] = useState([])
 
-//   const fetchData = async () => {
-//     const response = await fetch(baseUrl);
-//     const data = await response.json();
+  const fetchData = async () => {
+    const response = await fetch(baseUrl)
+    const data = await response.json()
 
-//     setCountries(data);
-//   };
+    setCountries(data)
+  }
 
-//   return { countries, fetchData };
-// };
+  return { countries, fetchData }
+}
 
-// export default useCountries;
+export default useCountries

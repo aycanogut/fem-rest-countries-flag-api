@@ -27,6 +27,8 @@ const StyledHeader = styled.header`
   } ;
 `
 
-export const Header = ({ children }: any) => {
+const Header = ({ children }: any) => {
   return <StyledHeader>{children}</StyledHeader>
 }
+
+export default Header

@@ -56,7 +56,7 @@ interface ITogglerProps {
   toggleTheme: () => void
 }
 
-export const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
+const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
   return (
     <Wrapper onClick={toggleTheme}>
       <Icon
@@ -73,3 +73,5 @@ export const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
     </Wrapper>
   )
 }
+
+export default Toggler

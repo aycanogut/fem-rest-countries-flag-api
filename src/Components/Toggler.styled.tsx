@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import helpers from '../styles/helpers'
 
 import IconDark from '../assets/icons/moon-half-dark.svg'
-
-import IconLight from '../../assets/icons/moon-half-light.svg'
+import IconLight from '../assets/icons/moon-half-light.svg'
 
 const Button = styled.button`
   background: none;

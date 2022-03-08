@@ -4,7 +4,9 @@ import { ThemeProvider } from 'styled-components'
 import useCountries from './hooks/useCountries'
 import useDarkMode from './hooks/useDarkMode'
 
-import { Header } from './Components/Header.styled'
+import Header from './Components/Header.styled'
+import Toggler from './Components/Toggler.styled'
+import CardContainer from './Components/CardContainer.styled'
 
 import { GlobalStyles } from './styles/globalStyles'
 import { lightTheme, darkTheme } from './styles/theme'
@@ -23,8 +25,9 @@ function App() {
           <GlobalStyles />
           <Header>
             <h1>Where in the world?</h1>
-            {/* <Toggler theme={theme} toggleTheme={themeToggler} /> */}
+            <Toggler theme={theme} toggleTheme={themeToggler} />
           </Header>
+          <CardContainer />
         </>
       </ThemeProvider>
     </div>

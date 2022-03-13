@@ -56,7 +56,7 @@ interface ITogglerProps {
   toggleTheme: () => void
 }
 
-const Toggler = ({ theme, toggleTheme }: ITogglerProps) => {
+const Toggler: React.FC<ITogglerProps> = ({ theme, toggleTheme }) => {
   return (
     <Wrapper onClick={toggleTheme}>
       <Icon

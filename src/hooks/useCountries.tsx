@@ -3,7 +3,7 @@ import { useState } from 'react'
 const baseUrl = `https://restcountries.com/v3.1/all`
 
 const useCountries = () => {
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState<any[]>([])
 
   const fetchData = async () => {
     const response = await fetch(baseUrl)

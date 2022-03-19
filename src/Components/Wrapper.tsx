@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import useCountries from '../hooks/useCountries'

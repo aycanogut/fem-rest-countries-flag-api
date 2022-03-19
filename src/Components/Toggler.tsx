@@ -47,7 +47,7 @@ const Icon = styled.img`
   }
 `
 
-const Wrapper = styled.div`
+const StyledToggler = styled.div`
   cursor: pointer;
 `
 
@@ -58,7 +58,7 @@ interface ITogglerProps {
 
 const Toggler: React.FC<ITogglerProps> = ({ theme, toggleTheme }) => {
   return (
-    <Wrapper onClick={toggleTheme}>
+    <StyledToggler onClick={toggleTheme}>
       <Icon
         style={{ display: `${theme == 'light' ? 'none' : 'inline'}` }}
         src={IconDark}
@@ -70,7 +70,7 @@ const Toggler: React.FC<ITogglerProps> = ({ theme, toggleTheme }) => {
         alt="light mode toggler"
       />
       <Button>Dark Mode</Button>
-    </Wrapper>
+    </StyledToggler>
   )
 }
 

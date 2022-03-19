@@ -7,7 +7,7 @@ import uid from '../utils/uid.js'
 
 import Card from './Card'
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 5rem;
@@ -48,27 +48,25 @@ const CardContainer = () => {
   }, [])
 
   return (
-    <main>
-      <StyledContainer>
-        {countries &&
-          countries.map((country) => (
-            <Card
-              key={uid()}
-              flag={country.flags.svg}
-              name={country.name.common}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              id={0}
-              subRegion={''}
-              domain={''}
-              currency={[]}
-              language={''}
-              borders={[]}
-            />
-          ))}
-      </StyledContainer>
-    </main>
+    <StyledContainer>
+      {countries &&
+        countries.map((country) => (
+          <Card
+            key={uid()}
+            flag={country.flags.svg}
+            name={country.name.common}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+            id={0}
+            subRegion={''}
+            domain={''}
+            currency={[]}
+            language={''}
+            borders={[]}
+          />
+        ))}
+    </StyledContainer>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import helpers from '../styles/helpers'
@@ -53,7 +53,7 @@ const StyledToggler = styled.div`
 
 interface ITogglerProps {
   theme: string | boolean | (() => void)
-  toggleTheme: string | boolean | (() => void)
+  toggleTheme: any
 }
 
 const Toggler: React.FC<ITogglerProps> = ({ theme, toggleTheme }) => {

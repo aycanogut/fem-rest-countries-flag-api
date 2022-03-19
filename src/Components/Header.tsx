@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import helpers from '../styles/helpers'
 
@@ -27,7 +27,11 @@ const StyledHeader = styled.header`
   } ;
 `
 
-const Header = ({ children }: any) => {
+interface IHeaderProps {
+  children: ReactNode
+}
+
+const Header: React.FC<IHeaderProps> = ({ children }) => {
   return <StyledHeader>{children}</StyledHeader>
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import useCountries from '../hooks/useCountries'
@@ -6,6 +6,7 @@ import helpers from '../styles/helpers'
 import uid from '../utils/uid.js'
 
 import Card from './Card'
+import SearchInput from './SearchInput'
 
 const StyledContainer = styled.main`
   display: grid;
@@ -42,31 +43,37 @@ const StyledContainer = styled.main`
 
 const CardContainer = () => {
   const { countries, fetchData } = useCountries()
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetchData()
   }, [])
 
   return (
-    <StyledContainer>
-      {countries &&
-        countries.map((country) => (
-          <Card
-            key={uid()}
-            flag={country.flags.svg}
-            name={country.name.common}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            id={0}
-            subRegion={''}
-            domain={''}
-            currency={[]}
-            language={''}
-            borders={[]}
-          />
-        ))}
-    </StyledContainer>
+    <>
+      <SearchInput onChange={(e) => setSearchTerm(e.target.value)} />
+      <StyledContainer>
+        {countries &&
+          countries
+            .filter((item) => item.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map((country) => (
+              <Card
+                key={uid()}
+                flag={country.flags.svg}
+                name={country.name.common}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                id={0}
+                subRegion={''}
+                domain={''}
+                currency={[]}
+                language={''}
+                borders={[]}
+              />
+            ))}
+      </StyledContainer>
+    </>
   )
 }
 

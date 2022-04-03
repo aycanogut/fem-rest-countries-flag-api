@@ -49,9 +49,13 @@ const CardContainer = () => {
     fetchData()
   }, [])
 
+  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value)
+  }
+
   return (
     <>
-      <SearchInput onChange={(e) => setSearchTerm(e.target.value)} />
+      <SearchInput onChange={inputHandler} />
       <StyledContainer>
         {countries &&
           countries
@@ -78,3 +82,6 @@ const CardContainer = () => {
 }
 
 export default CardContainer
+function ChangeEvent<T>() {
+  throw new Error('Function not implemented.')
+}

@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 
 import Header from './Header'
 import Toggler from './Toggler'
 import Loading from './Loading'
+import SearchWrapper from './SearchWrapper'
 const CardContainer = React.lazy(() => import('./CardContainer'))
 
 interface IWrapperProps {
@@ -11,6 +12,8 @@ interface IWrapperProps {
 }
 
 const Wrapper: React.FC<IWrapperProps> = ({ theme, themeToggler }) => {
+  const [searchTerm, setSearchTerm] = useState('')
+
   return (
     <main>
       <Header>
@@ -18,7 +21,8 @@ const Wrapper: React.FC<IWrapperProps> = ({ theme, themeToggler }) => {
         <Toggler theme={theme} toggleTheme={themeToggler} />
       </Header>
       <Suspense fallback={<Loading type="spin" color="black" />}>
-        <CardContainer />
+        <SearchWrapper setSearchTerm={setSearchTerm} />
+        <CardContainer searchTerm={searchTerm} />
       </Suspense>
     </main>
   )

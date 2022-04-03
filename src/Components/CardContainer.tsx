@@ -41,47 +41,40 @@ const StyledContainer = styled.main`
   }
 `
 
-const CardContainer = () => {
+interface ICardContainer {
+  searchTerm: string
+}
+
+const CardContainer: React.FC<ICardContainer> = ({ searchTerm }) => {
   const { countries, fetchData } = useCountries()
-  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetchData()
   }, [])
 
-  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value)
-  }
-
   return (
-    <>
-      <SearchInput onChange={inputHandler} />
-      <StyledContainer>
-        {countries &&
-          countries
-            .filter((item) => item.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map((country) => (
-              <Card
-                key={uid()}
-                flag={country.flags.svg}
-                name={country.name.common}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-                id={0}
-                subRegion={''}
-                domain={''}
-                currency={[]}
-                language={''}
-                borders={[]}
-              />
-            ))}
-      </StyledContainer>
-    </>
+    <StyledContainer>
+      {countries &&
+        countries
+          .filter((item) => item.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
+          .map((country) => (
+            <Card
+              key={uid()}
+              flag={country.flags.svg}
+              name={country.name.common}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+              id={0}
+              subRegion={''}
+              domain={''}
+              currency={[]}
+              language={''}
+              borders={[]}
+            />
+          ))}
+    </StyledContainer>
   )
 }
 
 export default CardContainer
-function ChangeEvent<T>() {
-  throw new Error('Function not implemented.')
-}

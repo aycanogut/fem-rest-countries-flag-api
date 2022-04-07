@@ -9,23 +9,23 @@ import Select from './Select'
 const StyledSearchWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 280px;
-  margin: 50px auto;
+  // max-width: 280px;
+  margin: 50px 2rem;
 
   @media only screen and ${helpers.device.sm} {
-    max-width: 328px;
+    // max-width: 425px;
   }
 
   @media only screen and ${helpers.device.md} {
-    max-width: 640px;
+    // max-width: 640px;
   }
 
   @media only screen and ${helpers.device.lg} {
-    max-width: 864px;
+    // max-width: 864px;
   }
 
   @media only screen and ${helpers.device.xl} {
-    max-width: 1280px;
+    // max-width: 1280px;
   }
 `
 

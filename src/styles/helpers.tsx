@@ -20,6 +20,7 @@ const device: IHelperProps = {
 
 const fontWeight: IHelperProps = {
   thin: '300',
+  regular: '400',
   semiBold: '600',
   extraBold: '800'
 }

@@ -40,9 +40,12 @@ export const GlobalStyles = createGlobalStyle<GlobalStyleProps>`
 
 // global styles
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
-    box-sizing: border-box;
 }
 
 body {

@@ -51,7 +51,7 @@ const StyledCardBottom = styled.div`
 
 const StyledTitle = styled.header`
   font-size: 2.2rem;
-  font-weight: ${helpers.fontWeight.extraBold};
+  font-weight: ${helpers.fontWeight.semiBold};
   padding: 0 0 0.7rem 0;
 
   @media only screen and ${helpers.device.md} {
@@ -64,6 +64,7 @@ const StyledList = styled.ul``
 const StyledListNode = styled.li`
   font-size: 1.75rem;
   line-height: 2.8rem;
+  font-weight: ${helpers.fontWeight.thin};
 
   @media only screen and ${helpers.device.md} {
     font-size: 1.4rem;
@@ -72,7 +73,7 @@ const StyledListNode = styled.li`
 `
 
 const StyledSpan = styled.span`
-  font-weight: ${helpers.fontWeight.semiBold};
+  font-weight: ${helpers.fontWeight.regular};
 `
 
 interface ICardProps {

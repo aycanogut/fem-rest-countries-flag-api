@@ -6,7 +6,6 @@ import helpers from '../styles/helpers'
 import uid from '../utils/uid.js'
 
 import Card from './Card'
-import SearchInput from './SearchInput'
 
 const StyledContainer = styled.main`
   display: grid;

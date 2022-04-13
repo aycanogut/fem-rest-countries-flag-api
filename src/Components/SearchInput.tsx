@@ -6,6 +6,7 @@ import helpers from '../styles/helpers'
 const StyledInputWrapper = styled.div`
   position: relative;
   width: 100%;
+  margin: 0 0 2.4rem 0;
 `
 
 const StyledInput = styled.input`

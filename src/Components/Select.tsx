@@ -13,8 +13,7 @@ const StyledSelectWrapper = styled.div`
 `
 
 const StyledSelect = styled.div`
-  margin: 2.4rem 0 0 3.2rem;
-  padding: 2.4rem 0 0 0;
+  margin: 2.4rem 0 2.4rem 3.2rem;
 `
 
 const DropDownListContainer = styled.div`

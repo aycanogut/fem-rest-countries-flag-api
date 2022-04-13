@@ -7,9 +7,15 @@ import SearchInput from './SearchInput'
 import Select from './Select'
 
 const StyledSearchWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 6.3rem;
   padding: 3rem 2rem 4.5rem 2rem;
+
+  @media only screen and ${helpers.device.md} {
+    flex-direction: row;
+  } ;
 `
 
 interface ISearchWrapper {

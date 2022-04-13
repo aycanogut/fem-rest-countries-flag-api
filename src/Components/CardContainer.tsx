@@ -9,10 +9,11 @@ import Card from './Card'
 
 const StyledContainer = styled.main`
   display: grid;
+  place-items: center;
   grid-template-columns: 1fr;
   row-gap: 5rem;
   max-width: 280px;
-  margin: 50px auto; //! update
+  margin: 14rem auto 8rem auto;
   background-color: ${({ theme }) => theme.body};
 
   @media only screen and ${helpers.device.sm} {

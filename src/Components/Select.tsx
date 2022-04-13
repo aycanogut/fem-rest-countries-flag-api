@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const StyledSelectWrapper = styled.div`
   width: 24.8rem;
   height: 6rem;
-  margin: 5rem 0 0 0;
   background-color: ${({ theme }) => theme.elements};
   color: ${({ theme }) => theme.text};
   border-radius: 0.6rem;
@@ -14,7 +13,8 @@ const StyledSelectWrapper = styled.div`
 `
 
 const StyledSelect = styled.div`
-  margin: 24px 0 0 32px;
+  margin: 2.4rem 0 0 3.2rem;
+  padding: 2.4rem 0 0 0;
 `
 
 const DropDownListContainer = styled.div`
@@ -24,7 +24,7 @@ const DropDownListContainer = styled.div`
 
 const DropDownList = styled.ul`
   margin: 2.6rem 0 0 0;
-  padding: 24px 0 24px 32px;
+  padding: 2.4rem 0 2.4rem 3.2rem;
   background-color: ${({ theme }) => theme.elements};
   color: ${({ theme }) => theme.text};
   border-radius: 0.6rem;

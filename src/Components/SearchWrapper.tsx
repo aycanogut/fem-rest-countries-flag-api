@@ -7,26 +7,9 @@ import SearchInput from './SearchInput'
 import Select from './Select'
 
 const StyledSearchWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  // max-width: 280px;
-  margin: 50px 2rem;
-
-  @media only screen and ${helpers.device.sm} {
-    // max-width: 425px;
-  }
-
-  @media only screen and ${helpers.device.md} {
-    // max-width: 640px;
-  }
-
-  @media only screen and ${helpers.device.lg} {
-    // max-width: 864px;
-  }
-
-  @media only screen and ${helpers.device.xl} {
-    // max-width: 1280px;
-  }
+  width: 100%;
+  height: 6.3rem;
+  padding: 3rem 2rem 4.5rem 2rem;
 `
 
 interface ISearchWrapper {

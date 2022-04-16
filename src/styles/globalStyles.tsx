@@ -49,6 +49,7 @@ html {
 }
 
 body {
+    margin: 0;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: 'Nunito Sans', sans-serif;

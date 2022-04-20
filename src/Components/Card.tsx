@@ -12,6 +12,7 @@ const StyledWrapper = styled.article`
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
+  cursor: pointer;
 
   @media only screen and ${helpers.device.md} {
     max-width: 264px;
@@ -77,6 +78,7 @@ const StyledSpan = styled.span`
 `
 
 interface ICardProps {
+  onClick: () => void
   id: number
   name: string
   flag: string
@@ -91,6 +93,7 @@ interface ICardProps {
 }
 
 const Card: React.FC<ICardProps> = ({
+  onClick,
   id,
   name,
   flag,
@@ -106,7 +109,7 @@ const Card: React.FC<ICardProps> = ({
   const { countries, fetchData } = useCountries()
 
   return (
-    <StyledWrapper>
+    <StyledWrapper onClick={onClick}>
       <StyledImgWrapper>
         <StyledImage src={flag} />
       </StyledImgWrapper>

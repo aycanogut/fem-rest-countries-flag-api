@@ -42,11 +42,11 @@ const StyledContainer = styled.main`
   }
 `
 
-interface ICardContainer {
+interface ICardContainerProps {
   searchTerm: string
 }
 
-const CardContainer: React.FC<ICardContainer> = ({ searchTerm }) => {
+const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
   const { countries, fetchData } = useCountries()
 
   useEffect(() => {
@@ -72,6 +72,7 @@ const CardContainer: React.FC<ICardContainer> = ({ searchTerm }) => {
               currency={[]}
               language={''}
               borders={[]}
+              onClick={() => null}
             />
           ))}
     </StyledContainer>

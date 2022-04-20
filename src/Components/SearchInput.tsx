@@ -30,6 +30,7 @@ const StyledInput = styled.input`
   }
 
   @media only screen and ${helpers.device.lg} {
+    width: 480px;
     padding: 0 0 0 7.5rem;
   }
 `

@@ -12,32 +12,33 @@ const StyledContainer = styled.main`
   place-items: center;
   grid-template-columns: 1fr;
   row-gap: 5rem;
-  max-width: 280px;
+  width: 280px;
   margin: 14rem auto 8rem auto;
   background-color: ${({ theme }) => theme.body};
 
   @media only screen and ${helpers.device.sm} {
     row-gap: 5rem;
-    max-width: 328px;
+    width: 328px;
   }
 
   @media only screen and ${helpers.device.md} {
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
-    max-width: 640px;
+    width: 640px;
+    margin: 7rem auto 0 auto;
   }
 
   @media only screen and ${helpers.device.lg} {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5rem;
-    max-width: 864px;
+    width: 864px;
   }
 
   @media only screen and ${helpers.device.xl} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 7.5rem;
     column-gap: 7.5rem;
-    max-width: 1280px;
+    width: 1280px;
   }
 `
 

@@ -15,7 +15,18 @@ const StyledSearchWrapper = styled.div`
 
   @media only screen and ${helpers.device.md} {
     flex-direction: row;
-  } ;
+    max-width: 59rem;
+    margin: auto;
+    padding: 3rem 0 4.5rem 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    max-width: 86rem;
+  }
+
+  @media only screen and ${helpers.device.xl} {
+    max-width: 128rem;
+  }
 `
 
 interface ISearchWrapper {

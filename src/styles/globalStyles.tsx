@@ -62,11 +62,11 @@ h1 {
 
     @media only screen and ${helpers.device.md} {
         font-size: 2.75rem;
-    } ;
+    } 
 
     @media only screen and ${helpers.device.md} {
         font-size: 2.35rem;
-    } ;
+    } 
 }
 
 ul {
@@ -77,5 +77,4 @@ ul {
 img {
     max-width: 100%;
 }
-
 `

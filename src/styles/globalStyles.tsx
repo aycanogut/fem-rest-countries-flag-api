@@ -77,4 +77,10 @@ ul {
 img {
     max-width: 100%;
 }
+
+a {
+    text-decoration: none !important;
+    color: ${({ theme }) => theme.text};
+
+}
 `

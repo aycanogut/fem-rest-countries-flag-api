@@ -1,6 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+
 import helpers from '../styles/helpers'
+
+import Toggler from './Toggler'
 
 const StyledHeader = styled.header`
   position: relative;
@@ -28,11 +31,17 @@ const StyledHeader = styled.header`
 `
 
 interface IHeaderProps {
-  children: ReactNode
+  theme: string | boolean | (() => void)
+  themeToggler: string | boolean | (() => void)
 }
 
-const Header: React.FC<IHeaderProps> = ({ children }) => {
-  return <StyledHeader>{children}</StyledHeader>
+const Header: React.FC<IHeaderProps> = ({ theme, themeToggler }) => {
+  return (
+    <StyledHeader>
+      <h1>Where in the world?</h1>
+      <Toggler theme={theme} toggleTheme={themeToggler} />
+    </StyledHeader>
+  )
 }
 
 export default Header

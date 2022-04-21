@@ -1,24 +1,16 @@
-import React, { Suspense, useState } from 'react'
+import React from 'react'
 
-import Header from './Header'
-import Toggler from './Toggler'
-import SearchWrapper from './SearchWrapper'
 import CardContainer from './CardContainer'
+import SearchWrapper from './SearchWrapper'
 
 interface IWrapperProps {
-  theme: string | boolean | (() => void)
-  themeToggler: string | boolean | (() => void)
+  searchTerm: string
+  setSearchTerm: Function
 }
 
-const Wrapper: React.FC<IWrapperProps> = ({ theme, themeToggler }) => {
-  const [searchTerm, setSearchTerm] = useState('')
-
+const Wrapper: React.FC<IWrapperProps> = ({ searchTerm, setSearchTerm }) => {
   return (
     <main>
-      <Header>
-        <h1>Where in the world?</h1>
-        <Toggler theme={theme} toggleTheme={themeToggler} />
-      </Header>
       <SearchWrapper setSearchTerm={setSearchTerm} />
       <CardContainer searchTerm={searchTerm} />
     </main>

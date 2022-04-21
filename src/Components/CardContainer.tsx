@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import useCountries from '../hooks/useCountries'
@@ -59,21 +60,23 @@ const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
         countries
           .filter((item) => item.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
           .map((country) => (
-            <Card
-              key={uid()}
-              flag={country.flags.svg}
-              name={country.name.common}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              id={0}
-              subRegion={''}
-              domain={''}
-              currency={[]}
-              language={''}
-              borders={[]}
-              onClick={() => null}
-            />
+            <Link to={`/${country.name.common.toLowerCase()}`} key={uid()}>
+              {console.log(country)}
+              <Card
+                flag={country.flags.svg}
+                name={country.name.common}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                id={0}
+                subRegion={''}
+                domain={''}
+                currency={[]}
+                language={''}
+                borders={[]}
+                onClick={() => null}
+              />
+            </Link>
           ))}
     </StyledContainer>
   )

@@ -78,38 +78,16 @@ const StyledSpan = styled.span`
 `
 
 interface ICardProps {
-  onClick: () => void
-  id: number
   name: string
   flag: string
   population: number
   region: string
-  subRegion: string
   capital: string[]
-  domain: string
-  currency: string[]
-  language: string
-  borders: string[]
 }
 
-const Card: React.FC<ICardProps> = ({
-  onClick,
-  id,
-  name,
-  flag,
-  population,
-  region,
-  subRegion,
-  capital,
-  domain,
-  currency,
-  language,
-  borders
-}) => {
-  const { countries, fetchData } = useCountries()
-
+const Card: React.FC<ICardProps> = ({ name, flag, population, region, capital }) => {
   return (
-    <StyledWrapper onClick={onClick}>
+    <StyledWrapper>
       <StyledImgWrapper>
         <StyledImage src={flag} />
       </StyledImgWrapper>

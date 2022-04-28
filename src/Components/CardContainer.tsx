@@ -58,12 +58,12 @@ const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
     <StyledContainer>
       {countries &&
         countries
-          .filter((item) => item.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
+          .filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
           .map((country) => (
-            <Link to={`/${country.name.common.toLowerCase()}`} key={uid()}>
+            <Link to={`/${country.name.toLowerCase()}`} key={uid()}>
               <Card
-                flag={country.flags.svg}
-                name={country.name.common}
+                flag={country.flag}
+                name={country.name}
                 population={country.population}
                 region={country.region}
                 capital={country.capital}

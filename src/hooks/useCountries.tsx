@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const baseUrl = `https://restcountries.com/v3.1/`
+const baseUrl = `https://restcountries.com/v2/`
 const allCountries = `all`
 const singleCountry = `name/`
 

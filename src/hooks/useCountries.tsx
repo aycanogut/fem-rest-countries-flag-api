@@ -1,18 +1,28 @@
 import { useState } from 'react'
 
-const baseUrl = `https://restcountries.com/v3.1/all`
+const baseUrl = `https://restcountries.com/v3.1/`
+const allCountries = `all`
+const singleCountry = `name/`
 
 const useCountries = () => {
   const [countries, setCountries] = useState<any[]>([])
+  const [country, setCountry] = useState<any[]>([])
 
-  const fetchData = async () => {
-    const response = await fetch(baseUrl)
+  const fetchCountries = async () => {
+    const response = await fetch(baseUrl + allCountries)
     const data = await response.json()
 
     setCountries(data)
   }
 
-  return { countries, fetchData }
+  const fetchCountry = async (countryName) => {
+    const response = await fetch(`${baseUrl}${singleCountry}${countryName}`)
+    const data = await response.json()
+
+    setCountry(data)
+  }
+
+  return { countries, country, fetchCountries, fetchCountry }
 }
 
 export default useCountries

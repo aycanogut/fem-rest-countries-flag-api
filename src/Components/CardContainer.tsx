@@ -48,10 +48,10 @@ interface ICardContainerProps {
 }
 
 const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
-  const { countries, fetchData } = useCountries()
+  const { countries, fetchCountries } = useCountries()
 
   useEffect(() => {
-    fetchData()
+    fetchCountries()
   }, [])
 
   return (

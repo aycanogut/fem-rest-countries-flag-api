@@ -9,22 +9,32 @@ import { getCountryName } from '../utils/alpha3Countries'
 
 import Button from './Button'
 
-const StyledWrapper = styled.article`
+const StyledWrapper = styled.div`
+  padding: 0 24px;
+
+  @media only screen and ${helpers.device.sm} {
+    padding: 0 56px;
+  }
+`
+
+const StyledCardWrapper = styled.article`
   display: flex;
   flex-direction: column;
+  margin: auto;
   background-color: ${({ theme }) => theme.elements};
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
   cursor: pointer;
 
-  @media only screen and ${helpers.device.md} {
-    max-width: 264px;
+  @media only screen and ${helpers.device.sm} {
+    max-width: 640px;
   }
-`
 
-const StyledButton = styled.button`
-  padding: 1rem 2rem;
+  @media only screen and ${helpers.device.lg} {
+    flex-direction: row;
+    max-width: 1290px;
+  }
 `
 
 const StyledImgWrapper = styled.div`
@@ -34,20 +44,8 @@ const StyledImgWrapper = styled.div`
 
 const StyledImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: auto;
   object-fit: cover;
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
-
-  @media only screen and ${helpers.device.sm} {
-    width: 328px;
-    height: 200px;
-  }
-
-  @media only screen and ${helpers.device.md} {
-    width: 265px;
-    height: 160px;
-  }
 `
 
 const StyledCardBottom = styled.div`
@@ -104,12 +102,11 @@ const CardDetail = () => {
   }, [])
 
   return (
-    <>
+    <StyledWrapper>
+      <Button />
       {country &&
-        country.map((country) => (
-          <StyledWrapper key={uid()}>
-            {console.log(country)}
-            <Button path="/">Button</Button>
+        country.slice(0, 1).map((country) => (
+          <StyledCardWrapper key={uid()}>
             <StyledImgWrapper>
               <StyledImage src={country.flag} />
             </StyledImgWrapper>
@@ -153,9 +150,9 @@ const CardDetail = () => {
                 <div>No Info</div>
               )}
             </StyledCardBottom>
-          </StyledWrapper>
+          </StyledCardWrapper>
         ))}
-    </>
+    </StyledWrapper>
   )
 }
 

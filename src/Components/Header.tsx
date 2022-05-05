@@ -13,8 +13,7 @@ const StyledHeader = styled.header`
   align-items: center;
   height: 100px;
   padding: 0 1.2rem;
-
-  box-shadow: 0px -2px 8px 4px ${({ theme }) => theme.navShadow};
+  box-shadow: 0px -2px 8px 4px ${({ theme }) => theme.shadow};
 
   @media only screen and ${helpers.device.sm} {
     padding: 0 1.6rem 0 2rem;

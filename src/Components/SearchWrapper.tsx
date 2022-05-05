@@ -31,9 +31,10 @@ const StyledSearchWrapper = styled.div`
 
 interface ISearchWrapper {
   setSearchTerm: Function
+  setFilteredItem: Function
 }
 
-const SearchWrapper: React.FC<ISearchWrapper> = ({ setSearchTerm }) => {
+const SearchWrapper: React.FC<ISearchWrapper> = ({ setSearchTerm, setFilteredItem }) => {
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value)
   }
@@ -41,7 +42,7 @@ const SearchWrapper: React.FC<ISearchWrapper> = ({ setSearchTerm }) => {
   return (
     <StyledSearchWrapper>
       <SearchInput onChange={inputHandler} />
-      <Select />
+      <Select setFilteredItem={setFilteredItem} />
     </StyledSearchWrapper>
   )
 }

@@ -44,9 +44,19 @@ const ListItem = styled.li`
   margin: 1rem 0;
 `
 
-const Select: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+interface ISelectProps {
+  setFilteredItem: Function
+}
+
+const Select: React.FC<ISelectProps> = ({ setFilteredItem }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggling = () => setIsOpen(!isOpen)
+
+  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'All']
+
+  const handleClick = (item) => {
+    setFilteredItem(item)
+  }
 
   return (
     <StyledSelectWrapper onClick={toggling}>
@@ -70,11 +80,11 @@ const Select: React.FC = () => {
       {isOpen && (
         <DropDownListContainer>
           <DropDownList>
-            <ListItem>Africa</ListItem>
-            <ListItem>America</ListItem>
-            <ListItem>Asia</ListItem>
-            <ListItem>Europe</ListItem>
-            <ListItem>Oceania</ListItem>
+            {regions.map((region) => (
+              <ListItem onClick={() => handleClick(region)} key={region}>
+                {region}
+              </ListItem>
+            ))}
           </DropDownList>
         </DropDownListContainer>
       )}

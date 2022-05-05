@@ -26,7 +26,7 @@ const StyledContainer = styled.main`
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
     width: 640px;
-    margin: 7rem auto 0 auto;
+    margin: 7rem auto;
   }
 
   @media only screen and ${helpers.device.lg} {
@@ -45,9 +45,10 @@ const StyledContainer = styled.main`
 
 interface ICardContainerProps {
   searchTerm: string
+  filteredItem: string
 }
 
-const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
+const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm, filteredItem }) => {
   const { countries, fetchCountries } = useCountries()
 
   useEffect(() => {
@@ -56,20 +57,35 @@ const CardContainer: React.FC<ICardContainerProps> = ({ searchTerm }) => {
 
   return (
     <StyledContainer>
-      {countries &&
-        countries
-          .filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
-          .map((country) => (
-            <Link to={`/${country.name.toLowerCase()}`} key={uid()}>
-              <Card
-                flag={country.flag}
-                name={country.name}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-              />
-            </Link>
-          ))}
+      {filteredItem === 'All'
+        ? countries
+            .filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map((country) => (
+              <Link to={`/${country.name.toLowerCase()}`} key={uid()}>
+                <Card
+                  flag={country.flag}
+                  name={country.name}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                />
+              </Link>
+            ))
+        : countries &&
+          countries
+            .filter((item) => item.region.toLowerCase().includes(filteredItem.toLowerCase()))
+            .filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map((country) => (
+              <Link to={`/${country.name.toLowerCase()}`} key={uid()}>
+                <Card
+                  flag={country.flag}
+                  name={country.name}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                />
+              </Link>
+            ))}
     </StyledContainer>
   )
 }

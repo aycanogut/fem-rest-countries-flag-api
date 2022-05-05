@@ -13,6 +13,8 @@ import CardDetail from './Components/CardDetail'
 
 const App: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('')
+  const [filteredItem, setFilteredItem] = useState<string>('All')
+
   const [theme, themeToggler, mountedComponent] = useDarkMode()
 
   const themeMode: any = theme === 'light' ? lightTheme : darkTheme
@@ -28,7 +30,14 @@ const App: React.FC = () => {
           <Routes>
             <Route
               path="/"
-              element={<Wrapper searchTerm={searchTerm} setSearchTerm={setSearchTerm} />}
+              element={
+                <Wrapper
+                  searchTerm={searchTerm}
+                  setSearchTerm={setSearchTerm}
+                  filteredItem={filteredItem}
+                  setFilteredItem={setFilteredItem}
+                />
+              }
             />
             <Route path=":id" element={<CardDetail />} />
           </Routes>

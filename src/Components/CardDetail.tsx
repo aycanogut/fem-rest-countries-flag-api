@@ -93,7 +93,17 @@ const StyledSpan = styled.span`
   font-weight: ${helpers.fontWeight.regular};
 `
 
-const CardDetail = () => {
+const StyledButton = styled.div`
+  padding: 1rem;
+  box-shadow: 0 0 8px 4px ${({ theme }) => theme.shadow};
+  margin: 0.4rem;
+`
+
+interface ICardDetailProps {
+  setFilteredItem: Function
+}
+
+const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem }) => {
   const { country, fetchCountry } = useCountries()
   const { id } = useParams()
 
@@ -101,9 +111,13 @@ const CardDetail = () => {
     fetchCountry(id)
   }, [])
 
+  const handleClick = (item) => {
+    setFilteredItem(item)
+  }
+
   return (
     <StyledWrapper>
-      <Button />
+      <Button onClick={() => handleClick('All')} />
       {country &&
         country.slice(0, 1).map((country) => (
           <StyledCardWrapper key={uid()}>
@@ -145,7 +159,9 @@ const CardDetail = () => {
               {country.borders ? (
                 country.borders
                   .slice(0, 3)
-                  .map((border) => <div key={uid()}>{getCountryName(border)}</div>)
+                  .map((border) => (
+                    <StyledButton key={uid()}>{getCountryName(border)}</StyledButton>
+                  ))
               ) : (
                 <div>No Info</div>
               )}

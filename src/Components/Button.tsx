@@ -27,9 +27,13 @@ const StyledText = styled.span`
   color: ${({ theme }) => theme.text};
 `
 
-const Button: React.FC = () => {
+interface IButtonProps {
+  onClick: (() => void | undefined) | undefined
+}
+
+const Button: React.FC<IButtonProps> = ({ onClick }) => {
   return (
-    <Link to="/">
+    <Link to="/" onClick={onClick}>
       <StyledButton>
         <StyledIcon viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <title />

@@ -39,7 +39,7 @@ const App: React.FC = () => {
                 />
               }
             />
-            <Route path=":id" element={<CardDetail />} />
+            <Route path=":id" element={<CardDetail setFilteredItem={setFilteredItem} />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

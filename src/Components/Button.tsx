@@ -2,18 +2,28 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+import helpers from '../styles/helpers'
+
 const StyledButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 20px 0;
+  margin: 4rem 0;
   padding: 0.6rem 1.6rem;
   background-color: ${({ theme }) => theme.elements};
   box-shadow: 0 0 8px 4px ${({ theme }) => theme.shadow};
   outline: none;
   border: none;
   cursor: pointer;
-  font-size: 1.4rem; ;
+  font-size: 1.4rem;
+
+  @media only screen and ${helpers.device.md} {
+    margin: 6rem 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    margin: 8rem 0;
+  }
 `
 
 const StyledIcon = styled.svg`
@@ -25,6 +35,11 @@ const StyledIcon = styled.svg`
 
 const StyledText = styled.span`
   color: ${({ theme }) => theme.text};
+  font-size: 1.6rem;
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 1.4rem;
+  }
 `
 
 interface IButtonProps {

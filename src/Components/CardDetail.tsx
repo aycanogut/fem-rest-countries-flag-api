@@ -11,9 +11,23 @@ import Button from './Button'
 
 const StyledWrapper = styled.div`
   padding: 0 24px;
+  margin: 0 auto;
 
   @media only screen and ${helpers.device.sm} {
     padding: 0 56px;
+  }
+
+  @media only screen and ${helpers.device.sm} {
+    max-width: 640px;
+  }
+
+  @media only screen and ${helpers.device.md} {
+    padding: 0;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    padding: 0 8rem;
+    max-width: 1290px;
   }
 `
 
@@ -34,6 +48,8 @@ const StyledCardWrapper = styled.article`
   @media only screen and ${helpers.device.lg} {
     flex-direction: row;
     max-width: 1290px;
+    background-color: ${({ theme }) => theme.body};
+    box-shadow: none;
   }
 `
 
@@ -46,6 +62,10 @@ const StyledImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
+
+  @media only screen and ${helpers.device.lg} {
+    max-width: 560px;
+  }
 `
 
 const StyledCardBottom = styled.div`
@@ -54,15 +74,24 @@ const StyledCardBottom = styled.div`
   @media only screen and ${helpers.device.md} {
     padding: 2.3rem 2.4rem 3.1rem 2.5rem;
   }
+
+  @media only screen and ${helpers.device.lg} {
+    padding: 4.5rem 0 0 12rem;
+  }
 `
 
 const StyledTitle = styled.header`
+  padding: 0 0 0.7rem 0;
+  white-space: nowrap;
   font-size: 2.2rem;
   font-weight: ${helpers.fontWeight.semiBold};
-  padding: 0 0 0.7rem 0;
 
   @media only screen and ${helpers.device.md} {
     font-size: 1.7rem;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    font-size: 2.2rem;
   }
 `
 
@@ -93,10 +122,31 @@ const StyledSpan = styled.span`
   font-weight: ${helpers.fontWeight.regular};
 `
 
+const StyledBorders = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and ${helpers.device.lg} {
+    align-items: center;
+    flex-direction: row;
+  }
+`
+
+const StyledButtons = styled.div`
+  display: flex;
+`
+
 const StyledButton = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 4.5rem 1rem 0 1rem;
   padding: 1rem;
-  box-shadow: 0 0 8px 4px ${({ theme }) => theme.shadow};
-  margin: 0.4rem;
+  box-shadow: 0 0 8px 1px ${({ theme }) => theme.shadow};
+
+  @media only screen and ${helpers.device.md} {
+    margin: 0 2rem 0 0;
+    min-width: 100px;
+  }
 `
 
 interface ICardDetailProps {
@@ -155,16 +205,20 @@ const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem }) => {
                   {country.languages.map((lang) => lang.name).join(', ')}
                 </StyledListNode>
               </StyledList>
-              <StyledText>Border Countries:</StyledText>
-              {country.borders ? (
-                country.borders
-                  .slice(0, 3)
-                  .map((border) => (
-                    <StyledButton key={uid()}>{getCountryName(border)}</StyledButton>
-                  ))
-              ) : (
-                <div>No Info</div>
-              )}
+              <StyledBorders>
+                <StyledText>Border Countries:</StyledText>
+                <StyledButtons>
+                  {country.borders ? (
+                    country.borders
+                      .slice(0, 3)
+                      .map((border) => (
+                        <StyledButton key={uid()}>{getCountryName(border)}</StyledButton>
+                      ))
+                  ) : (
+                    <div>No Info</div>
+                  )}
+                </StyledButtons>
+              </StyledBorders>
             </StyledCardBottom>
           </StyledCardWrapper>
         ))}

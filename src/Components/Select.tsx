@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import helpers from '../styles/helpers'
+
 const StyledSelectWrapper = styled.div`
   width: 24.8rem;
   height: 6rem;
@@ -21,7 +23,7 @@ const StyledSelect = styled.div`
 const StyledIcon = styled.svg`
   width: 12px;
   height: auto;
-  margin: 0 0 0 4.2rem;
+  margin: 0 2rem 0 auto;
   fill: ${({ theme }) => theme.icon};
 `
 

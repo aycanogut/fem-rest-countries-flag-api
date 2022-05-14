@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   margin: 4rem 0;
   padding: 0.6rem 1.6rem;
   background-color: ${({ theme }) => theme.elements};
-  box-shadow: 0 0 8px 4px ${({ theme }) => theme.shadow};
+  box-shadow: 0 0 10px 2px ${({ theme }) => theme.shadow};
   outline: none;
   border: none;
   cursor: pointer;

@@ -125,6 +125,8 @@ const StyledSpan = styled.span`
 const StyledBorders = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 0 0;
 
   @media only screen and ${helpers.device.lg} {
     align-items: center;
@@ -139,13 +141,19 @@ const StyledButtons = styled.div`
 const StyledButton = styled.div`
   display: flex;
   justify-content: center;
-  margin: 4.5rem 1rem 0 1rem;
+  align-items: center;
+  margin: 1rem 1rem 0 0;
   padding: 1rem;
   box-shadow: 0 0 8px 1px ${({ theme }) => theme.shadow};
+  font-size: 1.2rem;
 
   @media only screen and ${helpers.device.md} {
-    margin: 0 2rem 0 0;
+    margin: 1rem 2rem 0 0;
     min-width: 100px;
+  }
+
+  @media only screen and ${helpers.device.lg} {
+    margin: 0 2rem 0 0;
   }
 `
 

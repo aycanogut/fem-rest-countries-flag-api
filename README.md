@@ -1,12 +1,12 @@
-# Frontend Mentor - Social media dashboard with theme switcher solution
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
 ## Welcome! 👋
 
-This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-8aJ4s18aj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Frontend Mentor - Social media dashboard with theme switcher solution](#frontend-mentor---social-media-dashboard-with-theme-switcher-solution)
+- [Frontend Mentor - REST Countries API with color theme switcher solution](#frontend-mentor---rest-countries-api-with-color-theme-switcher-solution)
   - [Welcome! 👋](#welcome-)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)

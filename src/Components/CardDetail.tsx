@@ -56,6 +56,7 @@ const StyledCardWrapper = styled.article`
 const StyledImgWrapper = styled.div`
   max-width: 100%;
   height: auto;
+  margin-block: auto;
 `
 
 const StyledImage = styled.img`
@@ -96,9 +97,10 @@ const StyledTitle = styled.header`
 `
 
 const StyledText = styled.header`
+  margin: 0 auto 0 0;
+  padding: 0 0 0.7rem 0;
   font-size: 2rem;
   font-weight: ${helpers.fontWeight.regular};
-  padding: 0 0 0.7rem 0;
 
   @media only screen and ${helpers.device.md} {
     font-size: 1.7rem;
@@ -108,7 +110,7 @@ const StyledText = styled.header`
 const StyledList = styled.ul``
 
 const StyledListNode = styled.li`
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 2.8rem;
   font-weight: ${helpers.fontWeight.thin};
 
@@ -119,7 +121,13 @@ const StyledListNode = styled.li`
 `
 
 const StyledSpan = styled.span`
+  font-size: 1.5rem;
   font-weight: ${helpers.fontWeight.regular};
+
+  @media only screen and ${helpers.device.md} {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
 `
 
 const StyledBorders = styled.div`
@@ -136,6 +144,11 @@ const StyledBorders = styled.div`
 
 const StyledButtons = styled.div`
   display: flex;
+  margin: 0 auto 0 0;
+
+  @media only screen and ${helpers.device.lg} {
+    margin: 0 auto 0 1.2rem;
+  }
 `
 
 const StyledButton = styled.div`
@@ -209,7 +222,7 @@ const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem }) => {
                   <StyledSpan>Currencies:</StyledSpan> {country.currencies[0].code}
                 </StyledListNode>
                 <StyledListNode>
-                  <StyledSpan>Languages:</StyledSpan>{' '}
+                  <StyledSpan>Languages:</StyledSpan>
                   {country.languages.map((lang) => lang.name).join(', ')}
                 </StyledListNode>
               </StyledList>

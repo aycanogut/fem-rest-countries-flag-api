@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-I learned how to use custom hooks to implement dark mode.
+I learned how to use custom hooks to implement dark mode.    
 I learned how to use search and filter functionality with the an API request.
 
 ## Author

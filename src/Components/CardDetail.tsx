@@ -171,10 +171,11 @@ const StyledButton = styled.div`
 `
 
 interface ICardDetailProps {
+  setSearchItem: Function
   setFilteredItem: Function
 }
 
-const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem }) => {
+const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem, setSearchItem }) => {
   const { country, fetchCountry } = useCountries()
   const { id } = useParams()
 
@@ -184,6 +185,7 @@ const CardDetail: React.FC<ICardDetailProps> = ({ setFilteredItem }) => {
 
   const handleClick = (item) => {
     setFilteredItem(item)
+    setSearchItem('')
   }
 
   return (

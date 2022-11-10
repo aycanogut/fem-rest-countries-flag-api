@@ -49,6 +49,7 @@ interface ISelectProps {
 }
 
 const Select: React.FC<ISelectProps> = ({ setFilteredItem }) => {
+  const [region, setRegion] = useState<string>('Filter by Region')
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggling = () => setIsOpen(!isOpen)
 
@@ -56,12 +57,13 @@ const Select: React.FC<ISelectProps> = ({ setFilteredItem }) => {
 
   const handleClick = (item) => {
     setFilteredItem(item)
+    item === 'All' ? setRegion('Filter by Region') : setRegion(item)
   }
 
   return (
     <StyledSelectWrapper onClick={toggling}>
       <StyledSelect>
-        <span>Filter by Region</span>
+        <span>{region}</span>
         <StyledIcon
           version="1.1"
           id="Layer_1"

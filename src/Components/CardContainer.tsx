@@ -18,8 +18,11 @@ const StyledContainer = styled.main`
   background-color: ${({ theme }) => theme.body};
 
   @media only screen and ${helpers.device.sm} {
+    grid-template-columns: 1fr 1fr;
     row-gap: 5rem;
-    width: 328px;
+    column-gap: 1rem;
+    width: auto;
+    margin: 14rem 2rem 2rem;
   }
 
   @media only screen and ${helpers.device.md} {

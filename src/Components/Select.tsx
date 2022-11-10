@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import helpers from '../styles/helpers'
-
 const StyledSelectWrapper = styled.div`
   width: 24.8rem;
   height: 6rem;

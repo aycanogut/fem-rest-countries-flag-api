@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useCountries from '../hooks/useCountries'
-
 import helpers from '../styles/helpers'
 
 const StyledWrapper = styled.article`

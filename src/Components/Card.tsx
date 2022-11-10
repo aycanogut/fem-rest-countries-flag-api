@@ -11,10 +11,16 @@ const StyledWrapper = styled.article`
   border-bottom-left-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
   cursor: pointer;
+  transition .3s all;
 
   @media only screen and ${helpers.device.md} {
     max-width: 264px;
-  } ;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+    transition .3s all;
+  }
 `
 
 const StyledImgWrapper = styled.div`
